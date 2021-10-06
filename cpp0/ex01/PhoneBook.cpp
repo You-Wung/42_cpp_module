@@ -3,7 +3,7 @@
 void PhoneBook::add_index(void)
 {
 	std::cout << "first name: ";
-	std::cin >> first_name;
+	std::cin  >> first_name;
 	std::cout << "last name: ";
 	std::cin >> last_name;
 	std::cout << "nickname: ";
@@ -50,7 +50,7 @@ void PhoneBook::print(int index)
 
 int main()
 {
-	PhoneBook pb[9];
+	PhoneBook pb[8];
 	std::string str;
 	int i = 0;
 	int book = 0;
@@ -59,7 +59,7 @@ int main()
 	{
 		std::cout << "======[PhoneBook]======\n\nWrite \"ADD\" or \"SEARCH\" or \"EXIT\"\n";
 		std::cout << " >";
-		if (i == 9)
+		if (i == 8)
 			i = 0;
 		std::cin >> str;
 		if (std::cin.eof())
@@ -77,7 +77,7 @@ int main()
 				std::cout << "|" << std::setw(10) << "index" << "|" << std::setw(10) << "first name";
 				std::cout << "|" << std::setw(10) << "last name" << "|" << std::setw(10);
 				std::cout << "nickname" << "|" << "\n|----------|----------|----------|----------|\n";
-				for(int z = 0; z < book; z++)
+				for(int z = 0; z < book && z < 8; z++)
 					pb[z].search(z);
 				std::cout << "\nwhich index do you want to see? >";
 				std::cin >> str;

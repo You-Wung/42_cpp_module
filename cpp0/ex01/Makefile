@@ -5,7 +5,7 @@ CLA				= clang++
 RM				= rm -f
 CLAFLAGS		= -Wall -Wextra -Werror
 
-NAME			= a.out
+NAME			= Phonebook
 
 %.o:		%.cpp
 			$(CLA) $(CLAFLAGS) -c $< -o $@
