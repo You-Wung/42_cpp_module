@@ -1,7 +1,8 @@
 SRCS			= main.cpp
 CLA				= clang++
 RM				= rm -f
-CLAFLAGS		= -Wall -Wextra -Werror -std=c++98
+CLAFLAGS		= -Wall -Wextra -Werror
+#CLAFLAGS		= -Wall -Wextra -Werror -std=c++98
 	
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -9,7 +10,7 @@ OBJS			= $(SRCS:.cpp=.o)
 			$(CLA) $(CLAFLAGS) -c $< -o $@
 			
 
-NAME			= zombie
+NAME			= a.out
 
 all:			$(NAME)
 

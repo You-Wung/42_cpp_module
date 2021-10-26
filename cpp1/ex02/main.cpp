@@ -13,7 +13,8 @@ int main()
 	std::cout << "address of stringPTR: " << stringPTR << std::endl;
 	std::cout << "address of stringREF: " << stringREF << std::endl << std::endl;
 
-	std::cout << "1. " << *stringREF << std::endl;
-	std::cout << "2. " << *stringPTR << std::endl;
+	std::cout << "STR. " << str << std::endl;
+	std::cout << "REF. " << *stringREF << std::endl;
+	std::cout << "PTR. " << *stringPTR << std::endl;
 	delete stringPTR;
 }

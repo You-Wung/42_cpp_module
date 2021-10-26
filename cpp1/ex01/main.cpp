@@ -3,7 +3,7 @@
 int main()
 {
 	int number;
-	number = 5;
+	number = 4;
 
 	Zombie test;
 	Zombie* zb = test.zombieHorde(number, "Test Zombie");

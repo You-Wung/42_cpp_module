@@ -98,10 +98,6 @@ ZombieHorde 가 멤버함수이어야하는 이유
 `It isn’t something completely new, it is just another syntax for something that you already know:addresses. Even there are some tiny-little-minuscule detail`
 		이거 처음하는거 아니야. 
 
-```
-
-```
-
 ---
 
 # ex03: Unnecessary violence
@@ -276,3 +272,34 @@ $> ./karenFilter "I am not sure how tired I am today..."
 `There are many ways to filter karen, but one of the best ones is to SWITCH her off ;)`
 
 ​		필터링하는 많은 방법이 있지만, switch 문이 베스트
+
+---
+
+# 평가표
+
+ex00
+
+- newZombie 함수는 announce(), heap 할당 후 리턴
+
+- randomChump 함수는 stack할당 후 announce()
+
+ex01
+
+- zombieHorde() 추가, new[] 를 사용해 heap에 할당
+
+ex02
+
+- string on stack, pointer, ref
+
+ex03
+
+- humanA 는 ref 가 필요. 생성할 때 같이 초기화되며, 소멸자 호출 시까지 변할 일 없기에 더 편함
+- humanB는 pointer 필요. 생성할 때 필요초기화 안하며, 포인터 변경 가능성
+
+ex04
+
+- string, ifstream, fout 이용해 파일 읽고쓰기
+
+ex05
+
+- 
