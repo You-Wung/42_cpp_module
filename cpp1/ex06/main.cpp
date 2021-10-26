@@ -6,7 +6,7 @@ static int	find_index(char *str)
 
 	if (!strcmp(str, "debug"))
 		ret = 1;
-	else if (!strcmp(str, "debug"))
+	else if (!strcmp(str, "info"))
 		ret = 2;
 	else if (!strcmp(str, "warning"))
 		ret = 3;
