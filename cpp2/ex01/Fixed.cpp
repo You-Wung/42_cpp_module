@@ -63,6 +63,6 @@ int	Fixed::toInt(void) const
 
 std::ostream &operator<<(std::ostream &out, Fixed const &value)
 {
-    out << value.toFloat();
-    return (out);
+	out << value.toFloat();
+	return (out);
 }

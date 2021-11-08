@@ -89,15 +89,16 @@ $>
 ```c
 정리
 Fractional Bits가 8일 경우의 공식들
-	정수 N -> 고정소수값
-	N << 8
-	N * 256
-고정소수값 -> 정수값
-	fixed_point_number >> 8
-	fixed_point_number / 256
-고정소수값 -> 실수
-	(float)fixed_point_number / (1 << 8)
-	(float)(fixed_point_number / 256)
+	정수 -> 고정소수값 (실수안되는 이유, float 형식 4바이트먹음)
+		N << 8
+  정수 || 실수 -> 고정소수값
+		N * 256
+	고정소수값 -> 정수값 || 실수
+		fixed_point_number >> 8
+		fixed_point_number / 256
+	고정소수값 -> 실수
+		(float)fixed_point_number / (1 << 8)
+	 	(float)(fixed_point_number / 256)
 
 ##operator 연산자가 클래스 안에서 작동하는게 아니라 밖에서##
 고정소수점(Fixed Point)방식은 소수점 이상/이하를 특정 비트로 딱 나눠서 처리합니다.
@@ -232,16 +233,14 @@ Add the following public static member functions overloads to your class
 
 ```cpp
 int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
+  
 }
+//정리
+멤버함수에 의한 오버로딩
+ operator + 는 함수와 같이 간주
+	c = a + b
+	c = a.operator+ (b); 로 기술할 수도 있음
+		• 객체 a의 멤버함수 operator + 를 호출하고 인수 b를 전달
 ```
 
 ```
@@ -257,53 +256,14 @@ $> ./a.out
 https://velog.io/@appti/CPP-Module-03-ex02
 ```
 
-minishell is from 42 subject.
+---
 
-it's like bash shell.
+# 평가표
 
-this is graded 101.
-
-Your shell should: 
-
-• Not interpret unclosed quotes or unspecified special characters like \ or;.
-
-• Not use more than one global variable, think about it and be ready to explain why you do it. 
-
-• Show a prompt when waiting for a new command. 
-
-• Have a working History. 
-
-• Search and launch the right executable (based on the PATH variable or by using relative or absolute path) 
-
-• It must implement the builtins: 
-	◦ echo with option -n 
-	◦ cd with only a relative or absolute path 
-	◦ pwd with no options 4 Minishell As beautiful as a shell 
-	◦ export with no options 
-	◦ unset with no options 
-	◦ env with no options or arguments 
-	◦ exit with no options 
-
-• ’ inhibit all interpretation of a sequence of characters. 
-
-• " inhibit all interpretation of a sequence of characters except for $. 
-
-• Redirections: 
-	◦ < should redirect input. 
-	◦ > should redirect output. 
-	◦ “<<” read input from the current source until a line containing only the delimiter is seen. it doesn’t need to update history! 
-	◦ “>>” should redirect output with append mode. 
-
-• Pipes | The output of each command in the pipeline is connected via a pipe to the input of the next command. 
-
-• Environment variables ($ followed by characters) should expand to their values. 
-
-• $? should expands to the exit status of the most recently executed foreground pipeline. 
-
-• ctrl-C ctrl-D ctrl-\ should work like in bash. 
-
-• When interactive: 
-	◦ ctrl-C print a new prompt on a newline. 
-	◦ ctrl-D exit the shell. 
-	◦ ctrl-\ do nothing.
+- ex00
+  - 표준이되는 클래스 형식을 다루는 클래스를 소개한다.
+    1. 기본 생성자
+    2. 소멸자
+    3. 복사 생성자
+    4. 대입연산자 
 

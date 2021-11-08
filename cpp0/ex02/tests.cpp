@@ -46,7 +46,7 @@ int		main( void ) {
 		  ++(it.first), ++(it.second) ) {
 
 		(*(it.first)).makeDeposit( *(it.second) );
-	}
+	}//deposit 변수 저장
 
 	Account::displayAccountsInfos();
 	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
