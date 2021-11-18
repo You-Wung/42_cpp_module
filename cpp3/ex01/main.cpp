@@ -7,8 +7,15 @@ int main()
 
 		s1.attack("enemy");
 	}
-	std::cout << std::endl;
-	ScavTrap s2("MONSTER");
+	{
+		std::cout << std::endl;
+		ScavTrap s2("MONSTER");
 
-	s2.beRepaired(10);
+		s2.beRepaired(10);
+	}
+	std::cout << std::endl;
+	ScavTrap s3("test1");
+	ScavTrap s4("test2");
+
+	s3 = s4;
  }

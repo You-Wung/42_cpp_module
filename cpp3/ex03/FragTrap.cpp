@@ -9,9 +9,9 @@ FragTrap::FragTrap(void)
 {
 	std::cout << YELLOW << "    FragTrap construction called" << OG << std::endl;
 	_name = "default";
-	_hitPoint = 100;
-	_energyPoint = 100;
-	_attackPoint = 30;
+	_hitPoint = F_HP;
+	_energyPoint = F_EP;
+	_attackPoint = F_AP;
 }
 
 FragTrap::FragTrap(const FragTrap &f)
@@ -28,9 +28,9 @@ FragTrap::FragTrap(std::string s)
 {
 	std::cout << YELLOW << "    FragTrap construction called" << OG << std::endl;
 	_name = s;
-	_hitPoint = 100;
-	_energyPoint = 100;
-	_attackPoint = 30;
+	_hitPoint = F_HP;
+	_energyPoint = F_EP;
+	_attackPoint = F_AP;
 }
 
 FragTrap::~FragTrap()
@@ -40,5 +40,12 @@ FragTrap::~FragTrap()
 
 FragTrap &FragTrap::operator=(const FragTrap &c)
 {
+	if (this != &c)
+	{
+		_name = c._name;
+		_hitPoint = c._hitPoint;
+		_energyPoint = c._energyPoint;
+		_attackPoint = c._attackPoint;
+	}
 	return (*this);
 }

@@ -10,6 +10,9 @@
 # define BLUE						"\033[1;34m"
 # define OG							"\033[0;0m"
 
+# define C_HP 10
+# define C_EP 10
+# define C_AP 0
 
 class ClapTrap
 {
@@ -20,14 +23,14 @@ protected:
 	unsigned int	_attackPoint;
 
 public:
-	void attack(std::string const & target);
+	virtual void attack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
 	ClapTrap(void);
 	ClapTrap(const std::string s);
 	ClapTrap(const ClapTrap &c);
-	~ClapTrap();
+	virtual ~ClapTrap();
 	ClapTrap&	operator=(const ClapTrap& c);
 
 

@@ -38,7 +38,15 @@ ScavTrap::~ScavTrap(void)
 	std::cout << GREEN << "  ScavTrap destruction called" << OG << std::endl;
 }
 
-ScavTrap &ScavTrap::operator=(const ScavTrap &c)
+//https://pony11.tistory.com/26
+ScavTrap &ScavTrap::operator=(const ScavTrap &c)//뒤에 나온 연산자 = 
 {
+	if (this != &c)
+	{
+		_name = c._name;
+		_hitPoint = c._hitPoint;
+		_energyPoint = c._energyPoint;
+		_attackPoint = c._attackPoint;
+	}
 	return (*this);
 }

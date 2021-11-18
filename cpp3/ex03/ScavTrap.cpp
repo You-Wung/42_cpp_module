@@ -9,18 +9,18 @@ ScavTrap::ScavTrap(void)
 {
 	std::cout << GREEN << "  ScavTrap construction called" << OG << std::endl;
 	_name = "default";
-	_hitPoint = 100;
-	_energyPoint = 50;
-	_attackPoint = 20;
+	_hitPoint = S_HP;
+	_energyPoint = S_EP;
+	_attackPoint = S_AP;
 }
 
 ScavTrap::ScavTrap(std::string s)
 {
 	std::cout << GREEN << "  ScavTrap construction called" << OG << std::endl;
 	_name = s;
-	_hitPoint = 100;
-	_energyPoint = 50;
-	_attackPoint = 20;
+	_hitPoint = S_HP;
+	_energyPoint = S_EP;
+	_attackPoint = S_AP;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &s)
@@ -40,5 +40,12 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &c)
 {
+	if (this != &c)
+	{
+		_name = c._name;
+		_hitPoint = c._hitPoint;
+		_energyPoint = c._energyPoint;
+		_attackPoint = c._attackPoint;
+	}
 	return (*this);
 }

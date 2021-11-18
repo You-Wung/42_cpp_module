@@ -26,7 +26,7 @@ public:
 	ClapTrap(void);
 	ClapTrap(const std::string s);
 	ClapTrap(const ClapTrap &c);
-	~ClapTrap();
+	virtual ~ClapTrap();
 	ClapTrap&	operator=(const ClapTrap& c);
 
 

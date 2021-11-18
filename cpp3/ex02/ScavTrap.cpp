@@ -40,5 +40,12 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &c)
 {
+	if (this != &c)
+	{
+		_name = c._name;
+		_hitPoint = c._hitPoint;
+		_energyPoint = c._energyPoint;
+		_attackPoint = c._attackPoint;
+	}
 	return (*this);
 }

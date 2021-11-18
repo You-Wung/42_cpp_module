@@ -46,7 +46,7 @@ void Karen::complain(std::string level)
 	}
 	for(; i < 4;)
 	{
-		(this->*(lst[i].ptr))();
+		(this->*(lst[i].ptr))();//아래두줄 축약
 		//void(Karen::*p)(void) = lst[i].ptr;
 		//(this->*p)();
 		return ;

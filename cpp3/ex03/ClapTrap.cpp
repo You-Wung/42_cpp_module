@@ -59,7 +59,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &c)
 }
 
 ClapTrap::ClapTrap()
-: _hitPoint(10), _energyPoint(10), _attackPoint(0)
+: _hitPoint(C_HP), _energyPoint(C_HP), _attackPoint(C_AP)
 {
 	this->_name = "default";
 	std::cout << RED << "ClapTrap constructor called" << OG <<std::endl;
@@ -76,7 +76,7 @@ ClapTrap::ClapTrap(const ClapTrap &c)
 
 
 ClapTrap::ClapTrap(std::string s)
-: _hitPoint(10), _energyPoint(10), _attackPoint(0)
+: _hitPoint(C_HP), _energyPoint(C_HP), _attackPoint(C_AP)
 {
 	this->_name = s;
 	std::cout << RED << "ClapTrap constructor called" << OG <<std::endl;
