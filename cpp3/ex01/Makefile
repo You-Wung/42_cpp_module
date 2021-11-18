@@ -4,7 +4,7 @@ SRCS			=	main.cpp\
 
 CLA				= clang++
 RM				= rm -f
-#CLAFLAGS		= -Wall -Wextra -Werror
+CLAFLAGS		= -Wall -Wextra -Werror
 #CLAFLAGS		= -Wall -Wextra -Werror -std=c++98
 	
 OBJS			= $(SRCS:.cpp=.o)

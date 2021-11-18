@@ -9,6 +9,7 @@ private:
 	/* data */
 public:
 	void guardGate(void);
+	void attack(std::string const & target);
 	ScavTrap &operator=(const ScavTrap &c);
 	ScavTrap(void);
 	ScavTrap(const std::string s);

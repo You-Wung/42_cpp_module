@@ -176,3 +176,11 @@ B
 ​	A class가 가상상속을 했기 때문에 A는 가상의 class가 되어서 D class에서는 A class가 몇개인지 알 수 없음.
 ​	이럴때 D class는 A class를 1개로 인식을 해버린다. 실제론 다중 상속을 하고 있는 구조임.
 
+## <span style="background-color:#ffdce0">오버로딩, 오버라이딩 차이</span>
+
+오버로딩: same named function, different parameters
+
+오버라이딩: same named function, redefinition in child class
+
+
+

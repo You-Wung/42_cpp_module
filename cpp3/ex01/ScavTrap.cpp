@@ -1,5 +1,23 @@
 #include "ScavTrap.hpp"
 
+void ScavTrap::attack(std::string const & target)
+{
+	std::cout << GREEN << "[   ATTACK    ]\t";
+	if (!_hitPoint)
+		std::cout << "ScavTrap " << _name << " dead\n";
+	else if (!_energyPoint)
+		std::cout << "ScavTrap " << _name << " has no energy\n";
+	else
+	{
+		_energyPoint--;
+		std::cout << "ScavTrap " << _name << " attacks " << target;
+		std::cout <<  ", causing " << _attackPoint << " points of damage!";
+		std::cout << " energy : " << _energyPoint << std::endl;
+	}
+	std::cout << OG;
+}
+
+
 void ScavTrap::guardGate(void)
 {
 	std::cout << GREEN << "  ScavTrap have enterred in Gate keeper mode.\n" << OG;

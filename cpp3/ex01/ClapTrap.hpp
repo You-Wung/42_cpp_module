@@ -1,7 +1,7 @@
 #ifndef CLAP_TRAP_HPP
 # define CLAP_TRAP_HPP
 
-# include <iomanip> 
+# include <iomanip>
 # include <iostream>
 # include <string>
 # define RED						"\033[0;31m"
@@ -28,8 +28,6 @@ public:
 	ClapTrap(const ClapTrap &c);
 	virtual ~ClapTrap();
 	ClapTrap&	operator=(const ClapTrap& c);
-
-
 };
 
 
