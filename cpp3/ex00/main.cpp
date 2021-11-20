@@ -16,5 +16,4 @@ int main()
 	a.takeDamage(10);
 	a.takeDamage(10);
 	a.attack("spaceship");
-
 }

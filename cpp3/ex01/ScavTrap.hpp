@@ -9,7 +9,8 @@ private:
 	/* data */
 public:
 	void guardGate(void);
-	void attack(std::string const & target);
+	void attack(std::string const & target);//오버라이딩
+	//int attack(int a);//오버로딩
 	ScavTrap &operator=(const ScavTrap &c);
 	ScavTrap(void);
 	ScavTrap(const std::string s);

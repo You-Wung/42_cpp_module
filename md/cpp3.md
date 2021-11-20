@@ -182,5 +182,11 @@ B
 
 오버라이딩: same named function, redefinition in child class
 
+### <span style="background-color:#ffdce0">로컬 디렉토리에서는 삭제하지 않지만 git에서는 삭제</span>
+
+`git add .`을 자주 사용하다 보면 커밋하지 말아야 할 파일들을 커밋하는 경우가 있습니다. 이런 경우
+ `git rm --cached <fileName>` 명령어를 사용해 로컬 디렉토리에서는 파일을 유지하고 저장소에서만 삭제
 
 
+
+평가 회사. 채널톡, 크레마, 버즈빌
