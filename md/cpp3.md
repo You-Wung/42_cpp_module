@@ -38,6 +38,11 @@ public class Main{
 
 아래 코드를 보면 **Student s = (Student)p;** 라고 나오는데 이 부분이 바로 다운캐스팅이다.
 
+일반적으로 부모 포인터를 통하여
+자식 객체에 접근하는 (업 캐스팅) 은 허용되지만
+자식 포인터로 부모객체를 가르키는경우는
+ 허용되지않는다. 출처: https://see-ro-e.tistory.com/52 [SeeRoE 프로그래밍 기록]
+
 ```java
 public class Main{
 	public static void main(String[] args){

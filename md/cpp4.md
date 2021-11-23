@@ -81,6 +81,14 @@ delete j;//should not create a leak
 delete i;
 ```
 
+### about deep copy
+
+기본으로 생성되는 `Shallow copy` 는포인터 있을 때 복사는 하나 두번째 소멸자 호출시 에러발생.
+
+delete 두번하기 때문에.
+
+deep copy 뜻 : 멤버 뿐만 아니라 포인터로 참조하는 대상까지 복사함 (new 새로함)
+
 ## <span style="background-color:#ffdce0">ex02:abstract class</span>
 
 일반 동물은 결국 말이 안 돼요.
@@ -88,6 +96,16 @@ delete i;
 미래의 실수를 피하기 위해, 기본 동물 클래스는 즉시 사용할 수 없어야 합니다.
 실수로 동물 클래스를 인스턴스화하지 않도록 수정하십시오.
 나머지는 이전과 같이 작동해야 합니다.
+
+ Pure Virtual Function 은 아래와 같음 (헤더 안)
+
+```cpp
+virtual void pvf(void) const = 0;
+```
+
+
+
+ Pure Virtual Function을 갖고 있는 클래스는 파생 클래스에게 청사진을 제공하면서, 그 자체로는 객체로 이용할 수 없기 때문에 일종의 Interface로 동작한다. 이와 같은 클래스를 Abstract Class (추상 클래스)라고 부른다.
 
 ## <span style="background-color:#ffdce0">ex03:Interface & recap</span>
 
@@ -149,3 +167,29 @@ std::cout << "Copy Constructor\n";
 std::cout << "Default Constructor\n";
 ```
 
+---
+
+- AMateria → Interface of Cure & Ice
+
+- Cure
+
+- Ice
+
+- ICharacter → Interface of Character
+
+- Character
+
+- IMateriaSource → Interface of MateriaSource
+
+- MateriaSource
+
+![image-20211121232338756](/Users/taewung/Library/Application Support/typora-user-images/image-20211121232338756.png)
+
+요약
+
+1. 사용자: Character
+2. Character 은 Cure 나 Ice 소지 O
+3. Character 는 equip, unequip, use 상호작용
+4. Ice, Cure 생성을 위해서 MateriaSource를 이용해야한다.
+5. MateriaSource를 이용하여 물질을 생성하기 전에 먼저 물질에 대한 learn 필요. 
+6. 이를 위한 상호작용으로는 MateriaSource의 learnMateria와 createMateria가 있다.
