@@ -23,6 +23,7 @@ void						Character::unequip(int idx)
 	{
 		_am[idx] = NULL;
 		std::cout << "Successfully unequipped at [ " << idx << " ]\n";
+		return ;
 	}
 	std::cout << "unequip failed\n";
 }
@@ -44,6 +45,7 @@ Character&					Character::operator=(const Character& c)
 		if (c._am[i])
 			_am[i] = c._am[i]->clone();
 	}
+	return (*this);
 }
 Character::Character(void)
 {

@@ -10,7 +10,6 @@ class Character : public ICharacter
 		std::string							_name;
 
 	public:
-		//const AMateria*						getAMateria(int idx) const;
 		const std::string& 					getName(void) const;
 		void								equip(AMateria* am);
 		void								unequip(int idx);

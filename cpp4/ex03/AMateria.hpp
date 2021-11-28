@@ -8,6 +8,8 @@
 
 # define ARRAY 4
 
+class ICharacter;
+
 class AMateria
 {
 	protected:
