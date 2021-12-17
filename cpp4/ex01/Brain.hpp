@@ -6,6 +6,7 @@
 # include <string>
 # include <cstdlib>
 # define A_SIZE 100
+
 class Brain
 {
 private:
@@ -19,7 +20,5 @@ public:
 		Brain(const Brain& c);
 		virtual ~Brain(void);
 };
-
-
 
 # endif

@@ -6,9 +6,8 @@
 #define A_size 10
 int main()
 {
+	
 	{
-		Animal *a[A_size];
-
 		for (int i = 0; i < A_size; i++)
 		{
 			if (i % 2 != 0)

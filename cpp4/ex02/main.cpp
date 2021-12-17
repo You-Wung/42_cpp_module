@@ -6,7 +6,8 @@
 #define A_size 3
 int main()
 {
-	//Animal *a[A_size];
+	//Animal a;
+	//a.makeSound();
 
 	Dog *a[A_size];
 	Cat *b[A_size];

@@ -19,7 +19,7 @@ int main()
 	tmp = m->createMateria("cure");
 	person_A->equip(tmp);
 
-	ICharacter* person_B = new Character("person_A");
+	ICharacter* person_B = new Character("person_B");
 	person_B->use(0, *person_A);
 	person_B->use(1, *person_B);
 
