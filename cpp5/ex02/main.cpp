@@ -7,11 +7,13 @@ int main()
 {
 	PresidentialPardonForm a("a");
 	RobotomyRequestForm b("b");
-	ShrubberyCreationForm c("c");
+	ShrubberyCreationForm c("tyou");
 
-	Bureaucrat human("human", 5);
+	Bureaucrat human("human", 50);
 	human.signForm(a);
 	human.executeForm(a);
+	human.signForm(b);
+	human.executeForm(b);
 	human.signForm(c);
 	human.executeForm(c);
 

@@ -6,17 +6,13 @@
 
 int main()
 {
-	//PresidentialPardonForm a("a");
-	//RobotomyRequestForm b("b");
-	//ShrubberyCreationForm c("c");
-
-	//Bureaucrat human("human", 5);
-	//human.signForm(a);
-	//human.executeForm(a);
-	//human.signForm(c);
-	//human.executeForm(c);
-
 	Intern someRandomIntern;
-	Form* rrf;
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	Form* rrf1, *rrf2, *rrf3;
+	rrf1 = someRandomIntern.makeForm("robotomy request", "Bender");
+	rrf2 = someRandomIntern.makeForm("presidential pardon", "tyou");
+	rrf3 = someRandomIntern.makeForm("shrubbery creation", "tyou2");
+
+	delete (rrf1);
+	delete (rrf2);
+	delete (rrf3);
 }

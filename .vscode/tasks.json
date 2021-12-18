@@ -9,8 +9,7 @@
                 "-g",//디버깅옵션
                 //"${file}",//여기부터 main이랑 같이돌릴 object파일
                 "${fileDirname}/main.o",
-                "${fileDirname}/Bureaucrat.o",
-                "${fileDirname}/Form.o",
+                "${fileDirname}/Conversion.o",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"//파일명 "main"이 -o옵션을 받게될거임
             ],
