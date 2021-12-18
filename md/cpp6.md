@@ -52,6 +52,23 @@ double로 string을 변환시켜서 리턴. str_end는 마지막 문자를 지�
  str_end 정상리턴 '\0', 비정상리턴 '\0'아님 그게 f가 아니라면, 
 //https://en.cppreference.com/w/cpp/string/byte/strtof
 
+try 속 첫번째 if
+  value가 0.0 이고, input 첫문자가 - or + or 숫자가 아니면, 입력에러
+try 속 두번째 if
+  *ptr 값이 있는 것(숫자뒤 문자가있음), 그게 f 가 아니라면
+  
+throw 밑은 실행X
+
+Nan(숫자가 아님), inf(무한대)
+  
+double modf(double value, double *iptr); 실수 값을 정수 부분과 소수점 부분으로 분할
+float modff(float value, float *iptr); 실수 값을 정수 부분과 소수점 부분으로 분할
+
+std::numeric_limits<T>::digits10
+	10진수를 기반으로 변경되지 않고 나타낼 수 있는 숫자. 리턴. int같은경우 9인이유는 10숫자 꽉 채우면 9,999,999,999 같은거 표현못하기 때문.
+  
+  
+
 ```
 
 

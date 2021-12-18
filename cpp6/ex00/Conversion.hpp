@@ -1,14 +1,16 @@
 #ifndef CONVERSION_HPP
 # define CONVERSION_HPP
 
-# include <cmath>
-# include <cstdlib>
+# include <cmath>//isnan isinf
 # include <limits>
-# include <iomanip>
+# include <iomanip>//setprecision
 # include <iostream>
-# include <sstream>
-# include <stdexcept>
 # include <string>
+
+# define NP " Non displayable\n"
+# define IP "impossible\n"
+# define NANF "nanf\n"
+# define NA "nan\n"
 
 class Conversion
 {

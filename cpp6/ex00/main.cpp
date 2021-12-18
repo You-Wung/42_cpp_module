@@ -2,6 +2,6 @@
 
 int main()
 {
-	Conversion c("4.123asdad12312");
+	Conversion c("123.123123");
 	std::cout << c;
 }

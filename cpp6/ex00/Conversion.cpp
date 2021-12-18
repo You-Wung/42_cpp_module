@@ -59,9 +59,9 @@ Conversion::Conversion(const std::string& input)
 		char		*ptr = NULL;
 		*(const_cast<double*>(&_value)) = std::strtod(_input.c_str(), &ptr);
 		if (_value == 0.0 && (_input[0] != '-' && _input[0] != '+' && !std::isdigit(_input[0])))
-			throw (std::bad_alloc());
+			throw (std::exception());
 		if (*ptr && std::strcmp(ptr, "f"))
-			throw (std::bad_alloc());
+			throw (std::exception());
 	}
 	catch (std::exception &)
 	{
@@ -77,39 +77,45 @@ Conversion::~Conversion(void) {}
 static void									printToChar(std::ostream& o, const Conversion& c)
 {
 	o << "char: ";
-	//if (std::isnan(c.getValue()) || std::isinf(c.getValue()))
-		//o << C_NP << std::endl;
-	//else if (std::isprint(c.toChar()))
-		//o << "'" << c.toChar() << "'" << std::endl;
-	//else
-	 	//o << C_ND << std::endl;
+	if (std::isnan(c.getValue()) || std::isinf(c.getValue()))
+		o << IP;
+	else if (std::isprint(c.toChar()))
+		o << "'" << c.toChar() << "'" << std::endl;
+	else
+	 	o << NP << std::endl;
 }
 
 static void									printToInt(std::ostream& o, const Conversion& c)
 {
 	o << "int: ";
-	//if (std::isnan(c.getValue()) || std::isinf(c.getValue()))
-		//o << C_NP << std::endl;
-	//else
-		//o << c.toInt() << std::endl;
+	if (std::isnan(c.getValue()) || std::isinf(c.getValue()))
+		o << IP;
+	else
+		o << c.toInt() << std::endl;
 }
 
 static void									printToReal(std::ostream& o, const Conversion& c)
 {
 	if (std::isnan(c.getValue()) || std::isinf(c.getValue()))
 	{
-		o << "float: " << std::showpos << c.toFloat() << "f" << std::endl;
-		o << "double: " << std::showpos << c.toDouble() << std::endl;
+		o << "float: " << c.toFloat() << "f" << std::endl;
+		o << "double: " << c.toDouble() << std::endl;
 		return ;
 	}
-	if (c.toFloat() == static_cast<long long>(c.toFloat()))
+	double d_buf;
+	std::modf(c.toDouble(), &d_buf);
+	if (d_buf == 0.0 || c.toDouble() == d_buf)
 		o << "float: " << c.toFloat() << ".0f" << std::endl;
 	else
 	 	o << "float: " << std::setprecision(std::numeric_limits<float>::digits10) << c.toFloat() << "f" << std::endl;
-	if (c.toDouble() == static_cast<long long>(c.toDouble()))
+
+	float f_buf;
+	std::modff(c.toFloat(), &f_buf);
+	if (f_buf == 0.0 || c.toFloat() == f_buf)
 		o << "double: " << c.toDouble() << ".0" << std::endl;
 	else
-		o << "double: " << std::setprecision(std::numeric_limits<double>::digits10) << c.toDouble() << std::endl;
+		o << "double: " << std::setprecision(4) << c.toDouble() << std::endl;
+	o << std::numeric_limits<int>::digits10 << "\n";
 }
 
 std::ostream&								operator<<(std::ostream& o, const Conversion& c)
