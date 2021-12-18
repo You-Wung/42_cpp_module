@@ -13,7 +13,8 @@ Form*		Intern::makeForm(const std::string& type, const std::string& name)
 
 	for (int i = 0 ; i < 3 ; ++i)
 	{
-		if (P_FORM_NAME == type || R_FORM_NAME == type || S_FORM_NAME == type)
+		if ((P_FORM_NAME == type && i == 0) || (R_FORM_NAME == type && i == 1)
+				|| (S_FORM_NAME == type && i == 2))
 		{
 			std::cout << "Intern creates <" << type << " : " << name << ">" << std::endl;
 			switch (i)

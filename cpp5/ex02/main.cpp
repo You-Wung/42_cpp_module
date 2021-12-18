@@ -9,11 +9,11 @@ int main()
 	RobotomyRequestForm b("b");
 	ShrubberyCreationForm c("tyou");
 
-	Bureaucrat human("human", 50);
-	human.signForm(a);
-	human.executeForm(a);
-	human.signForm(b);
-	human.executeForm(b);
+	Bureaucrat human("human", 1);
+	//human.signForm(a);
+	//human.executeForm(a);
+	//human.signForm(b);
+	//human.executeForm(b);
 	human.signForm(c);
 	human.executeForm(c);
 
