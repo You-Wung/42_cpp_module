@@ -115,4 +115,4 @@ rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
 이건 Bender 타겟인 RobotomyRequestForm 폼을 만들어야해.
 
-![cpp5_ref](/Users/taewung/42/c4/cpp/md/cpp5_ref.png)
+![cpp5_ref](./cpp5_ref.png)
