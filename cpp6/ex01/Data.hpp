@@ -26,6 +26,5 @@ class Data
 uintptr_t								serialize(Data* ptr);
 Data*									deserialize(uintptr_t raw);
 std::ostream&							operator<<(std::ostream& o, const Data& ptr);
-void									print(uintptr_t raw);
 
 #endif
