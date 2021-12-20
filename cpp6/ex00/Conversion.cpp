@@ -93,14 +93,14 @@ static void									printToReal(std::ostream& o, const Conversion& c)
 	}
 	float f_buf;
 	std::modff(c.toFloat(), &f_buf);
-	if (f_buf == 0.0 || c.toFloat() == f_buf)
+	if (c.toFloat() - static_cast<int>(c.toFloat()) == 0.0 || c.toFloat() == f_buf)
 		o << "float: " << c.toFloat() << ".0f" << std::endl;
 	else
 	 	o << "float: " << std::setprecision(std::numeric_limits<float>::digits10) << c.toFloat() << "f" << std::endl;
 
 	double d_buf;
 	std::modf(c.toDouble(), &d_buf);
-	if (d_buf == 0.0 || c.toDouble() == d_buf)
+	if (c.toDouble() - static_cast<int>(c.toDouble()) == 0.0 || c.toDouble() == d_buf)
 		o << "double: " << c.toDouble() << ".0" << std::endl;
 	else
 		o << "double: " << std::setprecision(std::numeric_limits<double>::digits10) << c.toDouble() << std::endl;
