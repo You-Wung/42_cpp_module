@@ -1,4 +1,4 @@
-SRCS			=	Conversion.cpp\
+SRCS			=	Data.cpp\
 					main.cpp
 
 CLA				= clang++

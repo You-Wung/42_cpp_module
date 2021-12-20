@@ -15,7 +15,7 @@
 class Conversion
 {
 	private:
-		bool								_e;
+		bool								_b;
 		const std::string					_input;
 		const double						_value;
 
@@ -27,7 +27,7 @@ class Conversion
 		float								toFloat(void) const;
 		double								toDouble(void) const;
 
-		bool								getError(void) const;
+		bool								getBool(void) const;
 		const double&						getValue(void) const;
 		const std::string&					getInput(void) const;
 
