@@ -108,8 +108,8 @@ data address 를 받아 serialize 를 그 위에 사용해.
 
  
 reinterpret_cast 가지고 주소값을 가지고 노는게 아니라,
-                                                                                "바이트 스트림으로 바꾸고(직렬화), 다시 원래대로 복구한다(역직렬화)" 라고 이해하면 될 듯
-                                                                                	int a = 10;
+"바이트 스트림으로 바꾸고(직렬화), 다시 원래대로 복구한다(역직렬화)" 라고 이해하면 될 듯
+	int a = 10;
 	int b = 15;
 
 	uintptr_t a1 = reinterpret_cast<uintptr_t>(&a);
