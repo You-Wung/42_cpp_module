@@ -13,6 +13,8 @@ int main(int, char **)
 		numbers[i] = value;
 		mirror[i] = value;
 	}
+	for(int i=0; i<MAX_VAL; i++)//print elements of numbers
+		//std::cout << i << ": " << numbers[i] << "\n";
 	// SCOPE
 	{
 		Array<int> tmp = numbers;

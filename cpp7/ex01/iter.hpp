@@ -17,5 +17,6 @@ template <typename T>
 void										print(T arg)
 {
 	std::cout << " │" << std::fixed << std::setprecision(1) << arg << "\t";
+	//  "cout << fixed;" 의 뜻은 소수점을 고정시켜 표현
 }
 #endif

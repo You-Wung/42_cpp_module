@@ -28,8 +28,16 @@ Write a function template iter that take 3 parameters and returns nothing.
 
 인스턴스화된 함수 템플릿과 함께 가능한지 증명해.
 
-```
+```cpp
 for_each를 구현하는 것
+
+Test test[10];             // 에러가 발생한다. 기본 생성자가 없기 때문에.
+
+Test test[2] = { Test( 1, 1 ), Test( 2, 2 ) }; // 가능하다.
+
+Test* test = new Test[10]; // 기본 생성자가 없기 때문에 이것도 에러.
+
+출처: https://wnsgp.tistory.com/68 [전역하고 공부 하려고 만든 블로그]
 ```
 
 
