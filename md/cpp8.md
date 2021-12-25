@@ -27,13 +27,29 @@ standard container 가 어떻게 작동하는지 알아보고 알아서해.
 ```cpp
 STL
 	- 임의 타입의 객체를 보관할 수 있는 컨테이너 (container)
-		1. 배열 처럼 객체들을 순차적으로 보관하는 시퀀스 컨테이너 (sequence container)
+  
+		1. 배열처럼 객체들을 순차적으로 보관하는 시퀀스 컨테이너 (sequence container), 선형적인 특성
 				 벡터(vector) : 가변길이 배열
 				 리스트(list) : 양방향 연결 구조를 가진 자료형
 				 덱(deque) : 맨 뒤 원소와 맨 앞 원소 추가/제거 가능
+				 
+		2.Adaptor Container(Iterator X -> 순회, 탐색 불가능)
+				 std::stack<T>
+				 std::queue<T>
+				 std::priority_queue<T>
 				
-		2. 키를 바탕으로 대응되는 값을 찾아주는 연관 컨테이너 (associative container)
-		
+		3. 키를 바탕으로 대응되는 값을 찾아주는 연관 컨테이너 (associative container)
+  			 std::map<T>
+  			 std::multimap<T>
+  			 std::set<T>
+  			 std::multiset<T>
+  			 
+  	4. Unordered Associative Container
+				 std::unordered_map<T>
+				 std::unordered_multimap<T>
+				 std::unordered_set<T>
+				 std::unordered_multiset<T>
+				 
 	컨테이너에 보관된 원소에 접근할 수 있는 반복자 (iterator)
 	
 	반복자들을 가지고 일련의 작업을 수행하는 알고리즘 (algorithm)
@@ -97,3 +113,123 @@ C++0x에서는 이런 불편함을 개선하기 위해 한번에 최소와 최�
 | vector<vector<자료형>> 변수명           | 2차원 벡터 생성(열과 행 모두 가변길이)                 |
 | vector.assign(범위, 초기값)             | 범위만큼 초기값으로 초기화                             |
 
+
+
+
+
+## Exercise 02: Mutated abomination(변형된 혐오)
+
+std::stack 은 정말 멋지지만, STL 컨테이너 중 반복할 수 없는 것이야.
+
+std::stack를 수리하자.
+
+클래스 MutantStack 생성.
+ std::stack에 대해서 구현될 것이며, 모든 멤버 함수들을 제공하며, 반복자(iterator)도 제공한다.
+
+아래는 코드의 예이며, 출력은 예를 들어 MutantStack을 std::list로 교체하는 것과 동일하다.
+
+```cpp
+int main()
+{
+	MutantStack<int> mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+	std::stack<int> s(mstack);
+}
+```
+
+```
+모던C++에서는 이제 typedef를 사용하지 않고 using 키워드를 사용한다.
+using 은 typedef 와 다르게 템플릿도 지원한다.
+
+std::vector<int>::const_iterator citer = vec.begin();
+이는 Iterator가 가리키고 있는 데이터의 값을 변경하는 것을 막고자 할때 사용합니다.
+```
+
+typedef
+
+```cpp
+//타입의 새로운 별칭을 정의하는 키워드
+typedef __int64 Int64;
+
+class MyTypeClass
+{
+public:
+    typedef int Type1;
+};
+
+int main()
+{
+    MyTypeClass a;
+    MyTypeClass::Type1 b;
+    return 0;
+}
+```
+
+### typename
+
+##### 중첩 의존 타입 이름을 식별하는 용도에서는 반드시 typename을 사용해야 한다.
+
+- typename 키워드 없이 T::const_iterator pos; 만으로 선언을 했다면, 컴파일러는 const_iterator가 T 클래스 내부의 멤버변수일거라고 생각해버릴 수도 있다. 아니, 컴파일러는 이런 경우 기본적으로 타입이 아니라고 가정한다.
+- 따라서, 컴파일러에게 어떤 키워드는 typedef로 재정의 된 type이라는 것을 알려주기 위해 typename 키워드를 사용해야한다.
+
+### Keyword "default"
+
+default 의 의미
+
+- **복사생성자 경우**
+
+  깊은 복사를 하지 않아도 되므로 컴파일러가 구현해주는 디폴트 함수 및 연산자를 사용하겠다.
+
+- **기본 생성자와 소멸자**
+
+  메모리 할당 또는 해제가 필요없거나 기본 생성자와 소멸자를 그대로 사용해도된다면 default 키워드를 통해 명시적으로 "디폴트 값을 사용하겠다." 라고 표시한다.
+
+  
+
+### vector
+
+![z](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FeAdQgt%2FbtqC9OCqY4C%2Fx6BbtmZKyzdgHJYunbNWG1%2Fimg.png)
+
+### list
+
+![z](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbTaWcf%2FbtqC9Oh4Lfq%2FHXrPfr5wBo5IXDBSZQJ2jk%2Fimg.webp)
+
+중간에 insert() 지원.
+
+맨 앞과 뒤에 원소 추가, 삭제.
+
+### deque
+
+![z](https://blog.kakaocdn.net/dn/Tm6UM/btqC86pX070/ooDpOCHs9yaaCumGvvdne0/img.gif)
+
+Queue와 다른 점으로 삽입과 삭제를 한쪽이 아닌 **앞, 뒤 양쪽에서 할 수 있다는 것이다.**
+
+Deque는 stack과 Queue의 장점을 모은 것.
+
+
+
+
+
+#### 컨테이너에서 일반적으로 벡터가 만능이므로, 그냥 벡터사용하는 편.
+
+#### 맨 처음과 끝에서 할 작업이 많다면 덱을 사용한다.
+
+### 
