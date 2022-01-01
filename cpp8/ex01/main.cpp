@@ -12,12 +12,11 @@
 //	std::cout << sp.longestSpan() << std::endl;
 //}
 #include <random>
-#include <limits>
 int main()
 {
 	std::random_device rd;// 시드값을 얻기 위함
 	std::mt19937 gen(rd());// random_device 를 통해 난수 생성 엔진을 초기화
-	std::uniform_int_distribution<unsigned int> dis(0, 10000);// 난수열 균등 분포
+	std::uniform_int_distribution<unsigned int> dis(0, UINT32_MAX);// 난수열 균등 분포
 
 	Span sp(UINT32_MAX);
 	for (unsigned int i=0; i<10000; i++)

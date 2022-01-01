@@ -11,7 +11,7 @@ MutantStack<int> mstack;
 void cie(void)
 {
 	std::cout << "Const_interator\n";
-	//std::stack<int>::container_type::iterator it(mstack.cbegin());
+	// std::stack<int>::container_type::iterator it(mstack.cbegin());
 	MutantStack<int>::const_iterator it = mstack.cbegin();
 	MutantStack<int>::const_iterator ite = mstack.cend();
 	++it;
@@ -63,8 +63,8 @@ int main()
 	mstack.push(737);
 	mstack.push(0);
 
-	std::random_device rd;							// 시드값을 얻기 위함
-	std::mt19937 gen(rd());							// random_device 를 통해 난수 생성 엔진을 초기화
+	std::random_device rd;													// 시드값을 얻기 위함
+	std::mt19937 gen(rd());													// random_device 를 통해 난수 생성 엔진을 초기화
 	std::uniform_int_distribution<int> dis(0, 100); // 난수열 균등 분포
 	for (int i = 0; i < 100; i++)
 		mstack.push(dis(gen));
@@ -72,11 +72,15 @@ int main()
 		mstack.pop();
 
 	LINE
-	cie(); LINE
-	rie(); LINE
-	rcie(); LINE
+	cie();
+	LINE
+	rie();
+	LINE
+	rcie();
+	LINE
 
-	std::cout << "Iterator\n";
+					std::cout
+			<< "Iterator\n";
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;
@@ -86,7 +90,9 @@ int main()
 		std::cout << *it << "\t";
 		++it;
 	}
-	std::cout << "\n"; LINE
-	std::stack<int> s(mstack);
+	std::cout << "\n";
+	LINE
+			std::stack<int>
+					s(mstack);
 	std::cout << "top of s is " << s.top() << "\n";
 }

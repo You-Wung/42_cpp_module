@@ -1,6 +1,6 @@
 SRCS			= main.cpp
 
-CLA				= clang++
+CLA				= c++
 RM				= rm -f
 CLAFLAGS		= -Wall -Wextra -Werror -std=c++11
 #CLAFLAGS		= -g -Wall -Wextra -Werror -std=c++98
