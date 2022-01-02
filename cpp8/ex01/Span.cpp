@@ -34,7 +34,7 @@ unsigned int								Span::shortestSpan(void)
 	std::vector<unsigned int> diff(_data);
 	std::sort(std::begin(diff), std::end(diff));// 오름차순
 	std::adjacent_difference(std::begin(diff), std::end(diff), std::begin(diff));
-	int (*abs)(int) = &std::abs;
+	int (*abs)(int) = &std::abs; 
 	std::transform(std::begin(diff), std::end(diff), std::begin(diff), abs);// 함수포인터 int, 매개변수가 int인
 	return ((*std::min_element(std::begin(diff), std::end(diff))));
 }

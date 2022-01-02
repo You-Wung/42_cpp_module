@@ -22,7 +22,7 @@ class MutantStack : public std::stack<T>
 		iterator							end(void)			{ return (this->c.end()); }
 
 		const_iterator						cbegin(void) const	{ return (this->c.cbegin()); }
-
+		
 		const_iterator						cend(void) const	{ return (this->c.cend()); }
 
 		reverse_iterator					rbegin(void)		{ return (this->c.rbegin()); }

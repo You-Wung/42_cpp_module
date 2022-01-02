@@ -37,6 +37,7 @@ void rie(void)
 	}
 	std::cout << "\n";
 }
+
 void rcie(void)
 {
 	std::cout << "Const_reverse_iterator\n";
@@ -79,8 +80,10 @@ int main()
 	rcie();
 	LINE
 
-					std::cout
-			<< "Iterator\n";
+	std::vector<int> a;
+	a.begin();
+
+	std::cout << "Iterator\n";
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 	++it;

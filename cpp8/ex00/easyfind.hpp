@@ -23,7 +23,7 @@ void								easyfind(T& container, int value)
 			throw std::exception();
 		std::cout << GREEN << "Value " << value << " found on Index " << std::distance(std::begin(container), iter) << OG << std::endl;
 	} catch (std::exception) {
-		std::cerr << RED << "Value " << value << "is not in the container\n" << OG;
+		std::cerr << RED << "Value " << value << " is not in the container\n" << OG;
 	}
 }
 
